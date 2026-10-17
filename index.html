@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="瑞·达利欧与《原则》的学习整理：生平与桥水、我的历程、生活原则、工作原则、投资思想（经济机器、债务周期、世界秩序、全天候、圣杯）、术语与评价。">
+<title>达利欧 · 原则 — 渊默的学习小院</title>
+<style>
+:root{
+  --bg:#f2f1ee;--panel:#fbfaf8;--ink:#1d1f24;--soft:#5b616b;--faint:#8b919a;--line:#d5d4cf;
+  --acc:#1f4e8c;--acc2:#a5452b;--acc-soft:#dfe6f0;
+  --kai:"Kaiti SC","STKaiti","KaiTi","楷体",serif;
+  --song:"Songti SC","STSong","SimSun","Noto Serif CJK SC",serif;
+  --sans:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#14161a;--panel:#1b1e23;--ink:#e3e5e9;--soft:#a1a7b0;--faint:#737a84;--line:#32363d;--acc:#7fa8e0;--acc2:#e48a6e;--acc-soft:#22314a;color-scheme:dark}
+}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--song);font-size:17px;line-height:1.9;padding:22px 18px 64px}
+[hidden]{display:none!important}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0;text-align:inherit}
+a{color:var(--acc)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.wrap{max-width:1080px;margin-inline:auto}
+.home{font-size:.84rem;color:var(--soft);text-decoration:none;letter-spacing:.06em}
+.home:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;gap:8px 24px;margin:12px 0 14px}
+.ttl{flex:1 1 360px;min-width:0}
+h1{font-family:var(--kai);font-weight:400;font-size:clamp(2.2rem,6vw,3.2rem);line-height:1.15;margin:0;letter-spacing:.08em}
+.en{font-family:var(--sans);font-size:.9rem;color:var(--soft);margin:4px 0 0}
+.find{flex:0 1 280px;min-width:0}
+input[type=search]{font:inherit;font-size:.92rem;color:var(--ink);background:var(--panel);border:1px solid var(--line);padding:6px 12px;width:100%;border-radius:0}
+.qres{border:1px solid var(--line);background:var(--panel);padding:10px 14px;margin-bottom:14px;max-height:340px;overflow-y:auto}
+.qres p{margin:0 0 4px;font-size:.82rem;color:var(--soft)}
+.qres button{display:block;width:100%;padding:4px 0;font-size:.92rem;line-height:1.6;border-top:1px dotted var(--line)}
+.qres button b{font-weight:400;color:var(--acc);margin-right:8px}
+.qres button:hover span{text-decoration:underline}
+mark{background:var(--acc-soft);color:inherit}
+nav.tabs{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;flex-wrap:wrap;gap:2px 18px;padding:8px 0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin-bottom:26px}
+nav.tabs a{font-family:var(--kai);font-size:1.06rem;color:var(--soft);text-decoration:none;border-bottom:2px solid transparent}
+nav.tabs a:hover{color:var(--ink)}
+nav.tabs a[aria-current="page"]{color:var(--acc);border-bottom-color:var(--acc)}
+@media (max-width:760px){nav.tabs{position:static}}
+main{max-width:880px}
+h2{font-family:var(--kai);font-weight:400;font-size:clamp(1.8rem,5vw,2.3rem);line-height:1.25;margin:0 0 10px}
+h3{font-family:var(--kai);font-weight:400;font-size:1.4rem;margin:36px 0 8px;color:var(--acc)}
+h4{font-family:var(--kai);font-weight:400;font-size:1.15rem;margin:0}
+p{margin:0 0 12px}
+.lede{font-size:1.04rem;max-width:42em}
+.soft{color:var(--soft)}
+.fine{font-size:.86rem;color:var(--soft);border-left:2px solid var(--acc);padding-left:10px;max-width:46em}
+.big{font-family:var(--kai);font-size:1.4rem;line-height:1.7;color:var(--acc);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:14px 0 18px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:12px 0}
+.cards a{display:block;border:1px solid var(--line);background:var(--panel);padding:12px 14px;color:var(--ink);text-decoration:none}
+.cards a:hover{border-color:var(--acc)}
+.cards b{display:block;font-family:var(--kai);font-weight:400;font-size:1.15rem;color:var(--acc)}
+.cards span{font-size:.88rem;color:var(--soft);line-height:1.6;display:block}
+.row{padding:14px 0;border-top:1px solid var(--line)}
+.row h4 small{font-family:var(--sans);font-size:.78rem;color:var(--faint);margin-left:8px}
+.row p{margin:4px 0 0}
+ol.tl{list-style:none;margin:0;padding:0}
+ol.tl li{display:grid;grid-template-columns:5em minmax(0,1fr);gap:0 14px;padding:6px 0;border-top:1px dotted var(--line)}
+ol.tl b{font-weight:400;color:var(--acc);font-variant-numeric:tabular-nums}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:0 10px;padding:10px 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font-family:var(--sans);color:var(--panel);background:var(--acc);width:1.6em;height:1.6em;border-radius:50%;display:grid;place-items:center;font-size:.86rem;margin-top:.25em}
+.steps p{margin:2px 0 0}
+.loop{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:10px 0 4px;font-family:var(--kai);font-size:1.05rem}
+.loop span{border:1px solid var(--acc);color:var(--acc);padding:2px 10px;background:var(--panel)}
+.loop i{font-style:normal;color:var(--faint)}
+.ch{margin-top:30px;border-top:2px solid var(--ink);padding-top:10px;scroll-margin-top:60px}
+.ch h3{margin:0;color:var(--ink)}
+.ch>p{color:var(--soft);margin:6px 0 4px}
+.pr{display:grid;grid-template-columns:3.2em minmax(0,1fr);gap:0 12px;padding:10px 0;border-top:1px dotted var(--line)}
+.pr .no{font-family:var(--sans);color:var(--acc);font-variant-numeric:tabular-nums;font-size:.9rem;padding-top:3px}
+.pr h4{font-size:1.1rem}
+.pr p{margin:2px 0 0;font-size:.97rem}
+ul.take{margin:6px 0 0;padding-left:1.2em}
+ul.take li{margin:2px 0}
+.part{margin-top:34px}
+.part>h3{color:var(--acc2)}
+.jump{display:flex;flex-wrap:wrap;gap:4px 14px;margin:6px 0;font-family:var(--kai);font-size:1.02rem}
+.jump a{color:var(--soft);text-decoration:none}
+.jump a:hover{color:var(--acc)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+td,th{text-align:left;vertical-align:top;padding:7px 10px 7px 0;border-top:1px solid var(--line)}
+th{font-weight:400;font-family:var(--kai);color:var(--soft)}
+td.e{font-family:var(--sans);font-size:.8rem;color:var(--faint)}
+.tw{overflow-x:auto}
+.quad{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:12px 0;max-width:520px}
+.quad div{border:1px solid var(--line);background:var(--panel);padding:10px 12px;font-size:.9rem}
+.quad b{display:block;font-family:var(--kai);font-weight:400;color:var(--acc);font-size:1.05rem}
+footer{margin-top:56px;padding-top:14px;border-top:1px solid var(--line);font-size:.8rem;color:var(--faint);max-width:60em}
+@media (max-width:560px){.pr{grid-template-columns:minmax(0,1fr)}.pr .no{padding-top:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="home" href="../">← 渊默的学习小院</a>
+<header>
+  <div class="ttl"><h1>达利欧 · 原则</h1><p class="en">Ray Dalio · 1949— · 桥水基金创始人</p></div>
+  <div class="find"><input id="q" type="search" placeholder="搜：五步流程、圣杯、债务周期……" aria-label="搜索全站"></div>
+</header>
+<div id="qres" class="qres" hidden></div>
+<nav class="tabs" id="tabs" aria-label="栏目">
+  <a href="#/" data-t="">总览</a>
+  <a href="#/life" data-t="life">生平</a>
+  <a href="#/part1" data-t="part1">我的历程</a>
+  <a href="#/lp" data-t="lp">生活原则</a>
+  <a href="#/wp" data-t="wp">工作原则</a>
+  <a href="#/inv" data-t="inv">投资思想</a>
+  <a href="#/books" data-t="books">著作</a>
+  <a href="#/terms" data-t="terms">术语</a>
+  <a href="#/crit" data-t="crit">评价</a>
+  <a href="#/how" data-t="how">怎么读</a>
+</nav>
+<main id="main"></main>
+<footer>本站由 AI（Claude）用自己的话整理，是导读和转述，不是《原则》等书的原文或译文。原书受版权保护，深入学习请读正版。中译本由中信出版社出版。</footer>
+</div>
+<script src="d1.js"></script>
+<script src="d2.js"></script>
+<script src="d3.js"></script>
+<script src="d4.js"></script>
+<script>
+"use strict";
+const $=s=>document.querySelector(s),main=$("#main"),qres=$("#qres"),q=$("#q");
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const row=(h,p)=>`<div class="row"><h4>${esc(h)}</h4><p>${esc(p)}</p></div>`;
+const V={};
+V[""]=()=>`<p class="big">痛苦 + 反思 = 进步</p><p class="lede">${esc(D.INTRO)}</p>
+<h3>整体框架</h3>
+<div class="cards">
+<a href="#/life"><b>生平与桥水</b><span>从纽约球童到世界最大对冲基金的创始人；1982 年的惨败是转折点。</span></a>
+<a href="#/part1"><b>《原则》第一部分</b><span>我的历程：用“英雄之旅”的结构讲八段人生。</span></a>
+<a href="#/lp"><b>生活原则</b><span>五章四十条：拥抱现实、五步流程、极度开放、人各不同、有效决策。</span></a>
+<a href="#/wp"><b>工作原则</b><span>十六章：打造文化、找到对的人、建造和改进机器，附桥水的工具。</span></a>
+<a href="#/inv"><b>投资思想</b><span>经济机器、债务周期、世界秩序、国家债务、阿尔法与贝塔、圣杯、全天候。</span></a>
+<a href="#/crit"><b>评价与争议</b><span>桥水文化、业绩起伏、交接班、对中国的看法。</span></a>
+</div>
+<h3>一个循环</h3><p>他的整套方法可以压缩成一个不断转动的循环：</p>
+<div class="loop"><span>设定目标</span><i>→</i><span>遇到问题和痛苦</span><i>→</i><span>诊断根本原因</span><i>→</i><span>写成原则</span><i>→</i><span>设计并执行</span><i>→</i><span>检验结果</span><i>↺</i></div>
+<p class="soft">投资是这样做的，管理是这样做的，过日子也是这样做的。</p>`;
+V.life=()=>`<h2>生平与桥水</h2>${D.LIFE.map(x=>`<h3>${esc(x[0])}</h3><p>${esc(x[1])}</p>`).join("")}<h3>年表</h3><ol class="tl">${D.TIMELINE.map(x=>`<li><b>${esc(x[0])}</b><span>${esc(x[1])}</span></li>`).join("")}</ol>`;
+V.part1=()=>`<h2>第一部分：我的历程</h2><p class="fine">${esc(D.PART1_NOTE)}</p>${D.PART1.map(x=>`<div class="row"><h4>${esc(x[0])}<small>${esc(x[1])}</small></h4><p>${esc(x[2])}</p><p class="soft"><b style="font-weight:400;color:var(--acc)">教训：</b>${esc(x[3])}</p></div>`).join("")}`;
+V.lp=()=>`<h2>第二部分：生活原则</h2><p class="fine">${esc(D.LIFE_NOTE)}</p>
+<div class="jump"><a href="#five" data-anchor="five">五步流程</a>${D.LP.map((c,i)=>`<a href="#lp${i}" data-anchor="lp${i}">${esc(c[0].replace(/^第.章 /,""))}</a>`).join("")}</div>
+<section class="ch" id="five"><h3>${esc(D.FIVE.title)}</h3><p>${esc(D.FIVE.sum)}</p><ol class="steps">${D.FIVE.steps.map(s=>`<li><div><h4>${esc(s[0])}</h4><p>${esc(s[1])}</p></div></li>`).join("")}</ol><p class="fine" style="margin-top:10px">${esc(D.FIVE.note)}</p></section>
+${D.LP.map((c,i)=>`<section class="ch" id="lp${i}"><h3>${esc(c[0])}</h3><p>${esc(c[1])}</p>${c[2].map(p=>`<div class="pr"><span class="no">${esc(p[0])}</span><div><h4>${esc(p[1])}</h4><p>${esc(p[2])}</p></div></div>`).join("")}</section>`).join("")}
+<h3>结论</h3><p>${esc(D.LIFE_END)}</p>`;
+V.wp=()=>`<h2>第三部分：工作原则</h2><p class="fine">${esc(D.WORK_NOTE)}</p>
+${D.WP.map((g,gi)=>`<div class="part"><h3>${esc(g[0])}</h3>${g[1].map((c,ci)=>`<section class="ch" id="wp${gi}-${ci}"><h4 style="color:var(--faint);font-size:.9rem">${esc(c[0])}</h4><h3 style="margin-top:2px">${esc(c[1])}</h3><p>${esc(c[2])}</p><ul class="take">${c[3].map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`).join("")}</div>`).join("")}
+<h3>结论</h3><p>${esc(D.WORK_END)}</p>
+<h3>附录：桥水的工具</h3>${D.TOOLS.map(t=>row(t[0],t[1])).join("")}`;
+V.inv=()=>`<h2>投资思想</h2><p class="lede">${esc(D.INV_INTRO)}</p>
+<div class="jump">${D.INV.map((x,i)=>`<a href="#inv${i}" data-anchor="inv${i}">${esc(x[0].replace(/^[^、]+、/,""))}</a>`).join("")}</div>
+${D.INV.map((x,i)=>`<section class="ch" id="inv${i}"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p>${i===7?`<div class="quad"><div><b>增长上升</b>股票、公司债、大宗商品</div><div><b>通胀上升</b>通胀挂钩债券、大宗商品、黄金</div><div><b>增长下降</b>名义债券、通胀挂钩债券</div><div><b>通胀下降</b>股票、名义债券</div></div><p class="soft" style="font-size:.86rem">（四种环境中常见的受益资产，依桥水公开介绍的一般框架整理，仅作示意。）</p>`:""}${x[2].map(p=>row(p[0],p[1])).join("")}</section>`).join("")}`;
+V.books=()=>`<h2>著作</h2><div class="tw"><table><thead><tr><th>书名</th><th>英文</th><th>年份</th><th>说明</th></tr></thead><tbody>${D.BOOKS.map(b=>`<tr><td>${esc(b[0])}</td><td class="e">${esc(b[1])}</td><td>${esc(b[2])}</td><td>${esc(b[3])}</td></tr>`).join("")}</tbody></table></div>`;
+V.terms=()=>`<h2>术语</h2><div class="tw"><table><thead><tr><th>中文</th><th>英文</th><th>意思</th></tr></thead><tbody>${D.TERMS.map(t=>`<tr><td>${esc(t[0])}</td><td class="e">${esc(t[1])}</td><td>${esc(t[2])}</td></tr>`).join("")}</tbody></table></div>`;
+V.crit=()=>`<h2>评价与争议</h2>${D.CRITIQUE.map(x=>row(x[0],x[1])).join("")}`;
+V.how=()=>`<h2>怎么读</h2>${D.HOWTO.map(x=>row(x[0],x[1])).join("")}`;
+function route(){
+  const t=location.hash.replace(/^#\/?/,"").split("/")[0]||"";
+  document.querySelectorAll("#tabs a").forEach(a=>a.removeAttribute("aria-current"));
+  const cur=document.querySelector(`#tabs a[data-t="${t}"]`);if(cur)cur.setAttribute("aria-current","page");
+  main.innerHTML=(V[t]||V[""])();window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+document.addEventListener("click",e=>{const a=e.target.closest("[data-anchor]");if(a){e.preventDefault();const el=document.getElementById(a.dataset.anchor);if(el)el.scrollIntoView({block:"start"})}
+  const r=e.target.closest("[data-r]");if(r){qres.hidden=true;q.value="";location.hash="#/"+r.dataset.r;const an=r.dataset.an;if(an)setTimeout(()=>{const el=document.getElementById(an);if(el)el.scrollIntoView({block:"start"})},60)}});
+const IDX=[],add=(w,r,t,x,an)=>IDX.push({w,r,t,x:String(x),an:an||""});
+D.LIFE.forEach(x=>add("生平","life",x[0],x[1]));D.TIMELINE.forEach(x=>add("年表","life",x[0],x[1]));
+D.PART1.forEach(x=>add("我的历程","part1",x[0],x[2]+x[3]));
+D.FIVE.steps.forEach(s=>add("五步流程","lp",s[0],s[1],"five"));
+D.LP.forEach((c,i)=>c[2].forEach(p=>add("生活原则 "+p[0],"lp",p[1],p[2],"lp"+i)));
+D.WP.forEach((g,gi)=>g[1].forEach((c,ci)=>add("工作原则 "+c[0],"wp",c[1],c[2]+c[3].join(""),"wp"+gi+"-"+ci)));
+D.TOOLS.forEach(t=>add("桥水工具","wp",t[0],t[1]));
+D.INV.forEach((x,i)=>x[2].forEach(p=>add("投资思想 · "+x[0].replace(/^[^、]+、/,""),"inv",p[0],p[1],"inv"+i)));
+D.BOOKS.forEach(b=>add("著作","books",b[0],b.join(" ")));D.TERMS.forEach(t=>add("术语","terms",t[0],t[1]+t[2]));D.CRITIQUE.forEach(x=>add("评价","crit",x[0],x[1]));
+function snip(t,s){const i=t.indexOf(s);if(i<0)return "";const a=Math.max(0,i-16);return (a?"…":"")+esc(t.slice(a,i))+"<mark>"+esc(s)+"</mark>"+esc(t.slice(i+s.length,i+s.length+30))+"…"}
+q.addEventListener("input",()=>{const s=q.value.trim();if(!s){qres.hidden=true;return}
+  const sl=s.toLowerCase(),out=IDX.filter(x=>(x.t+x.x).toLowerCase().includes(sl)).slice(0,60);qres.hidden=false;
+  qres.innerHTML=out.length?`<p>${out.length>=60?"前 60 条":out.length+" 条"}</p>`+out.map(x=>`<button data-r="${esc(x.r)}" data-an="${esc(x.an)}"><b>${esc(x.w)}</b><span>${esc(x.t)}</span>　<small class="soft">${snip(x.x,s)}</small></button>`).join(""):`<p>没有找到，换个词试试。</p>`});
+route();
+</script>
+</body>
+</html>
