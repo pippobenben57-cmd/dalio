@@ -82,6 +82,18 @@ ul.take{margin:6px 0 0;padding-left:1.2em}
 ul.take li{margin:2px 0}
 .part{margin-top:34px}
 .part>h3{color:var(--acc2)}
+.nt{margin-top:34px;border-top:2px solid var(--ink);padding-top:10px;scroll-margin-top:60px}
+.nt .pt{font-family:var(--sans);font-size:.78rem;color:var(--faint);letter-spacing:.04em}
+.nt h3{margin:2px 0 6px;color:var(--ink)}
+.nt .qq{font-family:var(--kai);font-size:1.12rem;color:var(--acc);margin:4px 0 10px}
+.nt h5{font-family:var(--sans);font-weight:600;font-size:.8rem;letter-spacing:.08em;color:var(--acc2);margin:14px 0 4px}
+.nt ul{margin:0;padding-left:1.2em}.nt li{margin:3px 0}
+.nt .todo li::marker{content:"□ "}
+.nt .ask{border-left:2px solid var(--acc2);padding-left:10px;color:var(--soft)}
+.toolbar{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:10px 0;font-family:var(--sans);font-size:.86rem}
+.toolbar button{border:1px solid var(--line);padding:2px 10px;background:var(--panel)}
+.toolbar button[aria-pressed="true"]{border-color:var(--acc);color:var(--acc)}
+.nt.hid .fold{display:none}
 .jump{display:flex;flex-wrap:wrap;gap:4px 14px;margin:6px 0;font-family:var(--kai);font-size:1.02rem}
 .jump a{color:var(--soft);text-decoration:none}
 .jump a:hover{color:var(--acc)}
@@ -111,6 +123,7 @@ footer{margin-top:56px;padding-top:14px;border-top:1px solid var(--line);font-si
   <a href="#/part1" data-t="part1">我的历程</a>
   <a href="#/lp" data-t="lp">生活原则</a>
   <a href="#/wp" data-t="wp">工作原则</a>
+  <a href="#/notes" data-t="notes">读书笔记</a>
   <a href="#/inv" data-t="inv">投资思想</a>
   <a href="#/books" data-t="books">著作</a>
   <a href="#/terms" data-t="terms">术语</a>
@@ -124,6 +137,8 @@ footer{margin-top:56px;padding-top:14px;border-top:1px solid var(--line);font-si
 <script src="d2.js"></script>
 <script src="d3.js"></script>
 <script src="d4.js"></script>
+<script src="n1.js"></script>
+<script src="n2.js"></script>
 <script>
 "use strict";
 const $=s=>document.querySelector(s),main=$("#main"),qres=$("#qres"),q=$("#q");
@@ -137,6 +152,7 @@ V[""]=()=>`<p class="big">痛苦 + 反思 = 进步</p><p class="lede">${esc(D.IN
 <a href="#/part1"><b>《原则》第一部分</b><span>我的历程：用“英雄之旅”的结构讲八段人生。</span></a>
 <a href="#/lp"><b>生活原则</b><span>五章四十条：拥抱现实、五步流程、极度开放、人各不同、有效决策。</span></a>
 <a href="#/wp"><b>工作原则</b><span>十六章：打造文化、找到对的人、建造和改进机器，附桥水的工具。</span></a>
+<a href="#/notes"><b>读书笔记</b><span>逐章三十多篇：要点、理解、书外例子、对照、练习和追问，附一页纸总结。</span></a>
 <a href="#/inv"><b>投资思想</b><span>经济机器、债务周期、世界秩序、国家债务、阿尔法与贝塔、圣杯、全天候。</span></a>
 <a href="#/crit"><b>评价与争议</b><span>桥水文化、业绩起伏、交接班、对中国的看法。</span></a>
 </div>
@@ -154,6 +170,22 @@ V.wp=()=>`<h2>第三部分：工作原则</h2><p class="fine">${esc(D.WORK_NOTE)
 ${D.WP.map((g,gi)=>`<div class="part"><h3>${esc(g[0])}</h3>${g[1].map((c,ci)=>`<section class="ch" id="wp${gi}-${ci}"><h4 style="color:var(--faint);font-size:.9rem">${esc(c[0])}</h4><h3 style="margin-top:2px">${esc(c[1])}</h3><p>${esc(c[2])}</p><ul class="take">${c[3].map(x=>`<li>${esc(x)}</li>`).join("")}</ul></section>`).join("")}</div>`).join("")}
 <h3>结论</h3><p>${esc(D.WORK_END)}</p>
 <h3>附录：桥水的工具</h3>${D.TOOLS.map(t=>row(t[0],t[1])).join("")}`;
+V.notes=()=>{const parts=[...new Set(D.NOTES.map(n=>n.part))];
+const one=n=>`<section class="nt" id="${n.id}"><div class="pt">${esc(n.part)}</div><h3>${esc(n.t)}</h3><p class="qq">这一章回答：${esc(n.q)}</p>
+<h5>要点</h5><ul>${n.pts.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+<div class="fold"><h5>我的理解</h5><p>${esc(n.mine)}</p>
+<h5>书外的例子</h5><ul>${n.ex.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+<h5>对照其他思想家</h5><p>${esc(n.link)}</p>
+<h5>马上可以做</h5><ul class="todo">${n.todo.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+<h5>值得追问</h5><p class="ask">${esc(n.ask)}</p></div></section>`;
+return `<h2>《原则》读书笔记</h2><p class="fine">${esc(D.NOTE_INTRO)}</p>
+<h3>一页纸总结</h3>${D.ONEPAGE.map(x=>row(x[0],x[1])).join("")}
+<h3>全书结构</h3><div class="tw"><table><thead><tr><th>部分</th><th>篇幅</th><th>脉络</th></tr></thead><tbody>${D.STRUCT.map(x=>`<tr><td>${esc(x[0])}</td><td>${esc(x[1])}</td><td>${esc(x[2])}</td></tr>`).join("")}</tbody></table></div>
+<h3>逐章笔记</h3>
+<div class="toolbar"><button id="ntfold" aria-pressed="false">只看要点</button><span class="soft">共 ${D.NOTES.length} 篇</span></div>
+${parts.map(p=>`<div class="jump"><b style="font-weight:400;color:var(--acc2)">${esc(p)}</b>${D.NOTES.filter(n=>n.part===p).map(n=>`<a href="#${n.id}" data-anchor="${n.id}">${esc(n.t.replace(/^第.+?章 /,"").replace(/^.+? · /,"").replace(/（.*?）/,"").replace(/^(引言|附录|结语)：.*$/,"$1"))}</a>`).join("")}</div>`).join("")}
+${D.NOTES.map(one).join("")}
+<h3>怎样用这份笔记</h3>${D.NOTE_HOW.map(x=>row(x[0],x[1])).join("")}`};
 V.inv=()=>`<h2>投资思想</h2><p class="lede">${esc(D.INV_INTRO)}</p>
 <div class="jump">${D.INV.map((x,i)=>`<a href="#inv${i}" data-anchor="inv${i}">${esc(x[0].replace(/^[^、]+、/,""))}</a>`).join("")}</div>
 ${D.INV.map((x,i)=>`<section class="ch" id="inv${i}"><h3>${esc(x[0])}</h3><p>${esc(x[1])}</p>${i===7?`<div class="quad"><div><b>增长上升</b>股票、公司债、大宗商品</div><div><b>通胀上升</b>通胀挂钩债券、大宗商品、黄金</div><div><b>增长下降</b>名义债券、通胀挂钩债券</div><div><b>通胀下降</b>股票、名义债券</div></div><p class="soft" style="font-size:.86rem">（四种环境中常见的受益资产，依桥水公开介绍的一般框架整理，仅作示意。）</p>`:""}${x[2].map(p=>row(p[0],p[1])).join("")}</section>`).join("")}`;
@@ -168,7 +200,7 @@ function route(){
   main.innerHTML=(V[t]||V[""])();window.scrollTo(0,0);
 }
 window.addEventListener("hashchange",route);
-document.addEventListener("click",e=>{const a=e.target.closest("[data-anchor]");if(a){e.preventDefault();const el=document.getElementById(a.dataset.anchor);if(el)el.scrollIntoView({block:"start"})}
+document.addEventListener("click",e=>{const f=e.target.closest("#ntfold");if(f){const on=f.getAttribute("aria-pressed")!=="true";f.setAttribute("aria-pressed",on);f.textContent=on?"展开全部":"只看要点";document.querySelectorAll(".nt").forEach(x=>x.classList.toggle("hid",on));return}const a=e.target.closest("[data-anchor]");if(a){e.preventDefault();const el=document.getElementById(a.dataset.anchor);if(el)el.scrollIntoView({block:"start"})}
   const r=e.target.closest("[data-r]");if(r){qres.hidden=true;q.value="";location.hash="#/"+r.dataset.r;const an=r.dataset.an;if(an)setTimeout(()=>{const el=document.getElementById(an);if(el)el.scrollIntoView({block:"start"})},60)}});
 const IDX=[],add=(w,r,t,x,an)=>IDX.push({w,r,t,x:String(x),an:an||""});
 D.LIFE.forEach(x=>add("生平","life",x[0],x[1]));D.TIMELINE.forEach(x=>add("年表","life",x[0],x[1]));
@@ -177,6 +209,7 @@ D.FIVE.steps.forEach(s=>add("五步流程","lp",s[0],s[1],"five"));
 D.LP.forEach((c,i)=>c[2].forEach(p=>add("生活原则 "+p[0],"lp",p[1],p[2],"lp"+i)));
 D.WP.forEach((g,gi)=>g[1].forEach((c,ci)=>add("工作原则 "+c[0],"wp",c[1],c[2]+c[3].join(""),"wp"+gi+"-"+ci)));
 D.TOOLS.forEach(t=>add("桥水工具","wp",t[0],t[1]));
+D.NOTES.forEach(n=>add("读书笔记","notes",n.t,[n.q,...n.pts,n.mine,...n.ex,n.link,...n.todo,n.ask].join(" "),n.id));D.ONEPAGE.forEach(x=>add("读书笔记 · 一页纸","notes",x[0],x[1]));
 D.INV.forEach((x,i)=>x[2].forEach(p=>add("投资思想 · "+x[0].replace(/^[^、]+、/,""),"inv",p[0],p[1],"inv"+i)));
 D.BOOKS.forEach(b=>add("著作","books",b[0],b.join(" ")));D.TERMS.forEach(t=>add("术语","terms",t[0],t[1]+t[2]));D.CRITIQUE.forEach(x=>add("评价","crit",x[0],x[1]));
 function snip(t,s){const i=t.indexOf(s);if(i<0)return "";const a=Math.max(0,i-16);return (a?"…":"")+esc(t.slice(a,i))+"<mark>"+esc(s)+"</mark>"+esc(t.slice(i+s.length,i+s.length+30))+"…"}
